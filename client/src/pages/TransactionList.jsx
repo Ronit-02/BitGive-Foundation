@@ -19,11 +19,11 @@ const TransactionList = () => {
 
   const mapType = (typ) => typ === 0 ? "CREDIT" : "DEBIT"
 
-  return <div>
-    <table className="text-white table-auto">
-        <thead className="p-2 border-b-2 border-gray-50">
-            <tr className="p-2">
-                <th>#</th>
+  return (
+    <table className="overflow-y-scroll text-white table-auto">
+        <thead className="text-xl border-b-2 border-gray-300">
+            <tr className="">
+                <th  className="py-4">#</th>
                 <th>Timestamp</th>
                 <th>From</th>
                 <th>To</th>
@@ -31,25 +31,25 @@ const TransactionList = () => {
                 <th>Type</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody className="">
             {txns && (
                 txns.map((tx, i) => (
                     <tr className="p-4">
-                        <td>{i+1}</td>
-                        <td>{tx.timestamp}</td>
-                        <td>{tx.from}</td>
-                        <td>{tx.to}</td>
-                        <td>{tx.amount} MATIC</td>
-                        <td>{mapType(tx.type)}</td>
+                        <td className="p-4">{i+1}</td>
+                        <td className="p-4">{tx.timestamp}</td>
+                        <td className="p-4">{tx.from}</td>
+                        <td className="p-4">{tx.to}</td>
+                        <td className="p-4">{tx.amount} MATIC</td>
+                        <td className="p-4">{mapType(tx.type)}</td>
                     </tr>
                 ))
             )}
         </tbody>
         <tfoot className="w-full">
-            <button type="button" onClick={() => navigate('/')} className="text-center font-bold text-white">Back</button>
+            <button type="button" onClick={() => navigate('/')} className="mt-4 font-bold text-center text-white">Back</button>
         </tfoot>
     </table>
-  </div>;
+  )
 };
 
 export default TransactionList;

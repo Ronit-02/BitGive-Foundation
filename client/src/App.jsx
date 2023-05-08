@@ -8,7 +8,7 @@ import TransactionList from './pages/TransactionList';
 const App = () => {
   return (
     <div className="relative sm:-8 p-4 bg-[#13131a] min-h-screen flex flex-row">
-      <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">
+      <div className="flex-1 max-sm:w-full  max-w-[1280px] mx-auto sm:pr-5 mt-4">
         <Navbar />
 
         <Routes>

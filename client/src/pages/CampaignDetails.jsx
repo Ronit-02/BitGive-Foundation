@@ -61,7 +61,7 @@ const CampaignDetails = () => {
       {isLoading && <Loader />}
 
       <div className="w-full flex md:flex-row flex-col mt-10 gap-[30px]">
-        <div className="flex-1 flex-col">
+        <div className="flex-col flex-1">
           <img
             src={state.imgUrl}
             alt="campaign"
@@ -88,6 +88,7 @@ const CampaignDetails = () => {
             value={state.amountCollected}
           />
           <CountBox title="Total Backers" value={donators.length} />
+          {console.log(state)}
         </div>
       </div>
 
@@ -139,7 +140,7 @@ const CampaignDetails = () => {
                 donators.map((item, index) => (
                   <div
                     key={`${item.donator}-${index}`}
-                    className="flex justify-between items-center gap-4"
+                    className="flex items-center justify-between gap-4"
                   >
                     <p className="font-epilogue font-normal text-[16px] text-[#b2b3bd] leading-[26px] break-ll">
                       {index + 1}. {item.donator}
